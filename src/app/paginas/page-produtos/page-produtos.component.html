@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid header" style="justify-content: space-around;">
+        @for (categoria of categorias; track categoria.categoria) {
+            <span class="sub-header" (click)="redireciona(categoria.categoria)">{{categoria.categoria}}</span>
+        }
+    </div>
+</nav>
+
+<div>
+    @for (categoria of categorias; track categoria.categoria) {
+        <div class="d-flex justify-content-center">
+            <h3 class="text-uppercase categoria" [id]="categoria.categoria">{{ categoria.categoria }}</h3>
+        </div>
+        <div class="row row-cols-1 row-cols-md-5 g-4 d-flex justify-content-center">
+            @for (produto of categoria.produtos; track produto.id) {
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img [src]="produto.src" class="card-img-top imagem" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title titulo"> {{ produto.title }} </h4>
+                            <h5 class="card-title preco"> R$ {{ produto.preco | number:'1.2-2' }} </h5>
+                            <a href="#" class="btn btn-primary botao">Ver produto</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
