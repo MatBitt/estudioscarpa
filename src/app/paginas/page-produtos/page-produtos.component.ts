@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ICategorias } from '../../interfaces/Iproduto';
+import { ICategorias, IProduto } from '../../interfaces/Iproduto';
 import { CommonModule } from '@angular/common';
 import { mockProdutos } from '../../mock/mock';
 
@@ -12,11 +12,22 @@ import { mockProdutos } from '../../mock/mock';
 })
 export class PageProdutosComponent {
   categorias: ICategorias[] = mockProdutos;
+  tituloModal: string = ''
+  descModal: string = ''
+  precoModal: number = 0
+  imgModal: string = ''
 
   redireciona(categoria: string) {
     var div = document.getElementById(categoria);
     if (div) {
         div.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  alterarModal(produto: IProduto) {
+    this.tituloModal = produto.title
+    this.descModal = produto.desc
+    this.precoModal = produto.preco
+    this.imgModal = produto.src
   }
 }

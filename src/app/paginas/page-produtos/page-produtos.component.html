@@ -11,15 +11,15 @@
         <div class="d-flex justify-content-center">
             <h3 class="text-uppercase categoria" [id]="categoria.categoria">{{ categoria.categoria }}</h3>
         </div>
-        <div class="row row-cols-1 row-cols-md-5 g-4 d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-4 d-flex justify-content-center remover-margem">
             @for (produto of categoria.produtos; track produto.id) {
                 <div class="col d-flex justify-content-center">
                     <div class="card" style="width: 18rem;">
                         <img [src]="produto.src" class="card-img-top imagem" alt="...">
                         <div class="card-body">
-                            <h4 class="card-title titulo"> {{ produto.title }} </h4>
-                            <h5 class="card-title preco"> R$ {{ produto.preco | number:'1.2-2' }} </h5>
-                            <a href="#" class="btn btn-primary botao">Ver produto</a>
+                            <h5 class="card-title titulo"> {{ produto.title }} </h5>
+                            <h4 class="card-title preco"> R$ {{ produto.preco | number:'1.2-2' }} </h4>
+                            <a type="button" class="btn btn-primary botao" data-bs-toggle="modal" data-bs-target="#detailCard" (click)="alterarModal(produto)">ver produto</a>
                         </div>
                     </div>
                 </div>
@@ -27,3 +27,29 @@
         </div>
     }
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailCard" tabindex="-1" aria-labelledby="detailCardLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="card" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4" style="width: 100%;">
+                <img [src]="imgModal" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title titulo">{{ tituloModal }}</h5>
+                  <p class="card-text">{{ descModal }}</p>
+                  <h5 class="card-text preco">R$ {{ precoModal | number:'1.2-2' }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
+        </div>
+      </div>
+    </div>
+  </div>

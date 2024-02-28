@@ -9,3 +9,16 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
+
+.espacamento-invisivel {
+    width: 48.5px;
+}
+
+.icone {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    border-color: #181718;
+    background-color: #4276f0;
+}

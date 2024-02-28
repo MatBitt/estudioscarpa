@@ -21,9 +21,29 @@
 
 .preco {
     font-family: 'Caprasimo';
+    color: #4276f0;
 }
 
 .categoria {
     font-family: 'Caprasimo';
     margin: 20px 0;
+}
+
+
+.remover-margem {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.botao {
+    color: white;
+    background-color: #F97111;
+    font-family: 'Caprasimo';
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.titulo {
+    font-family: 'Caprasimo';
 }
