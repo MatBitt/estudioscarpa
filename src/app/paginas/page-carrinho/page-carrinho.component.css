@@ -1,0 +1,36 @@
+.botao {
+    color: white;
+    background-color: #F97111;
+    font-family: 'Caprasimo';
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.titulo {
+    font-family: 'Caprasimo';
+}
+
+.preco {
+    font-family: 'Caprasimo';
+    color: #4276f0;
+}
+
+.quantidade {
+    font-family: 'Caprasimo';
+    color: #F97111;
+    margin-bottom: 0;
+}
+
+.botao-quantidade {
+    color: white;
+    background-color: #F97111;
+    font-family: 'Caprasimo';
+    border: none;
+    margin: auto;
+    width: 50px;
+}
+
+.alinhar-vertical {
+    align-items: center;
+}

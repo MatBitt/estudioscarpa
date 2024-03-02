@@ -4,6 +4,7 @@ export interface IProduto {
     title:string
     desc:string
     preco:number
+    quantidade:number
 }
 
 export interface ICategorias {

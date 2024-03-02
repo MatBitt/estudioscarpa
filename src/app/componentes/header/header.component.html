@@ -5,6 +5,12 @@
       <img width="150" height="30" src="assets/logotipo.png" alt="Logo" class="d-inline-block align-text-top" style="object-fit: cover;">
     </a>
     <button routerLink="/carrinho" class="navbar-brand icone" type="button">
+      @if (!estouNoCarrinho() && quantidadeProdutos) {
+        <span class="position-absolute top-1 start-1 translate-middle badge rounded-pill bg-danger">
+          {{ quantidadeProdutos }}
+          <span class="visually-hidden"></span>
+        </span>
+      }
       <i class="fa-solid fa-cart-shopping" style="color: #181718;"></i>
     </button>
   </div>

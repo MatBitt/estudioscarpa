@@ -10,6 +10,7 @@ export const mockProdutos: ICategorias[] = [
           title: 'titulo2',
           desc: 'desc2',
           preco: 10.50,
+          quantidade: 1
         },
       ]
     },
@@ -22,6 +23,7 @@ export const mockProdutos: ICategorias[] = [
           title: 'titulo1',
           desc: 'desc1',
           preco: 10.50,
+          quantidade: 1
         },
       ]
     },
@@ -34,6 +36,7 @@ export const mockProdutos: ICategorias[] = [
           title: 'titulo5',
           desc: 'desc5',
           preco: 10.50,
+          quantidade: 1
         },
       ]
     },
@@ -46,6 +49,7 @@ export const mockProdutos: ICategorias[] = [
           title: 'titulo3',
           desc: 'desc3',
           preco: 10.50,
+          quantidade: 1
         },
       ]
     },
@@ -58,6 +62,7 @@ export const mockProdutos: ICategorias[] = [
           title: 'titulo4',
           desc: 'desc4',
           preco: 10.50,
+          quantidade: 1
         },
       ]
     }

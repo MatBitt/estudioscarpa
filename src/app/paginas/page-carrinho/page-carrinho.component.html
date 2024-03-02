@@ -1,1 +1,33 @@
-<p>page-carrinho works!</p>
+<app-topico topico="Carrinho"></app-topico>
+
+@if (carrinho.length === 0) {
+    <p class="text-center mb-5">Seu carrinho está vazio</p>
+    <div class="d-flex justify-content-center">
+        <a type="button" class="btn btn-primary botao text-uppercase" routerLink="/">ir as compras</a>
+    </div>
+} @else {
+    <div>
+        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 g-4 d-flex justify-content-center remover-margem">
+            @for (produto of carrinho; track $index) {
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img [src]="produto.src" class="card-img-top imagem" height="350px" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title titulo"> {{ produto.title }} </h5>
+                            <h4 class="card-title preco"> R$ {{ produto.preco | number:'1.2-2' }} </h4>
+                            <div class="d-flex alinhar-vertical">
+                                <button class="btn btn-primary botao-quantidade" (click)="diminuirQuantidade( produto )">-</button>
+                                <h5 class="card-title quantidade" style="margin-bottom: 0;"> x{{ produto.quantidade }} </h5>
+                                <button class="btn btn-primary botao-quantidade" (click)="aumentarQuantidade( produto )">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="d-flex justify-content-center mt-5 mb-5">
+            <a type="button" class="btn btn-primary botao" data-bs-toggle="modal" data-bs-target="#detailCard">comprar</a>
+        </div>
+    </div>
+}
+
