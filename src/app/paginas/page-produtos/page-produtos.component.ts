@@ -42,4 +42,8 @@ export class PageProdutosComponent {
     this.carrinho.diminuirQuantidade(produto)
     this.produtoSelecionado = this.carrinho.findProduto(produto)
   }
+
+  limpar() {
+    this.carrinho.limparCarrinho()
+  }
 }

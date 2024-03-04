@@ -26,4 +26,8 @@ export class PageCarrinhoComponent {
   diminuirQuantidade(produto: IProduto) {
     this.carrinhoService.diminuirQuantidade(produto)
   }
+
+  quantidadeProdutos() {
+    return this.carrinhoService.getQuantidadeProdutos()
+  }
 }
