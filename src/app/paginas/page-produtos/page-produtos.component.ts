@@ -29,21 +29,24 @@ export class PageProdutosComponent {
     this.produtoSelecionado = produto
   }
 
-  adicionarAoCarrinho(produto: IProduto) {
-    this.carrinho.addProduto(produto)
+  cancelarOperacao(produto: IProduto) {
+    produto.quantidade = produto.quantidadeAnterior
   }
 
   aumentarQuantidade(produto: IProduto) {
-    this.carrinho.addProduto(produto)
-    this.produtoSelecionado = this.carrinho.findProduto(produto)
+    this.produtoSelecionado.quantidade++
   }
 
   diminuirQuantidade(produto: IProduto) {
-    this.carrinho.diminuirQuantidade(produto)
-    this.produtoSelecionado = this.carrinho.findProduto(produto)
+    this.produtoSelecionado.quantidade--
   }
 
   limpar() {
     this.carrinho.limparCarrinho()
+  }
+
+  adicionarCarrinho(produto: IProduto) {
+    produto.quantidadeAnterior = produto.quantidade
+    this.carrinho.alterarQuantidade()
   }
 }

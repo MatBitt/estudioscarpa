@@ -1,0 +1,9 @@
+.footer {
+    background-color: #f6c0c0;
+}
+
+.borda {
+    border-top: #181718;
+    border-top-style: solid;
+    border-top-width: 0.5px;
+}

@@ -5,6 +5,7 @@ export interface IProduto {
     desc:string
     preco:number
     quantidade:number
+    quantidadeAnterior:number
 }
 
 export interface ICategorias {

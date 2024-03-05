@@ -5,3 +5,9 @@
     padding: 0;
     color: #181718;
 }
+
+html, body {
+    background-color: #ebe1cf;
+    height: 100%;
+    margin: 0;
+}

@@ -19,6 +19,7 @@ export class CarrinhoService {
     const index = this.produtos.findIndex(item => item.id === produto.id)
     if (index !== -1) {
       this.produtos[index].quantidade++ 
+      this.produtos[index].quantidadeAnterior++ 
       this.quantidadeProdutos++
       this.numeroItensCarrinhoSubject.next(this.quantidadeProdutos)
     }
@@ -29,6 +30,7 @@ export class CarrinhoService {
     if (index !== -1) {
       this.quantidadeProdutos--
       this.produtos[index].quantidade--
+      this.produtos[index].quantidadeAnterior--
       this.numeroItensCarrinhoSubject.next(this.quantidadeProdutos)
     }
   }
@@ -43,13 +45,22 @@ export class CarrinhoService {
   }
 
   limparCarrinho() {
-    for(const produto of this.produtos)
-    produto.quantidade = 0;
+    for(const produto of this.produtos) {
+      produto.quantidade = 0;
+    }
     this.quantidadeProdutos = 0
     this.numeroItensCarrinhoSubject.next(this.quantidadeProdutos)
   }
 
   getQuantidadeProdutos(){
     return this.quantidadeProdutos
+  }
+
+  alterarQuantidade() {
+    this.quantidadeProdutos = 0
+    for(const produto of this.produtos) {
+      this.quantidadeProdutos += produto.quantidade
+    }
+    this.numeroItensCarrinhoSubject.next(this.quantidadeProdutos)
   }
 }

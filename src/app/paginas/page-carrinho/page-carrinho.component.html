@@ -18,7 +18,7 @@
                                 <h4 class="card-title preco"> R$ {{ produto.preco | number:'1.2-2' }} </h4>
                                 <div class="d-flex alinhar-vertical">
                                     <button class="btn btn-primary botao-quantidade" (click)="diminuirQuantidade( produto )">-</button>
-                                    <h5 class="card-title quantidade" style="margin-bottom: 0;"> x{{ produto.quantidade }} </h5>
+                                    <h5 class="card-title quantidade mb-0"> x{{ produto.quantidade }} </h5>
                                     <button class="btn btn-primary botao-quantidade" (click)="aumentarQuantidade( produto )">+</button>
                                 </div>
                             </div>

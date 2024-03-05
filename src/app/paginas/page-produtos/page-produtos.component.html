@@ -1,5 +1,5 @@
 <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid header" style="justify-content: space-around;">
+    <div class="container-fluid header">
         @for (categoria of categorias; track categoria.categoria) {
             <span class="sub-header" (click)="redireciona(categoria.categoria)">{{categoria.categoria}}</span>
         }
@@ -24,17 +24,21 @@
             }
         </div>
     }
-    <button (click)="limpar()">asdfasdf</button>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="detailCard" tabindex="-1" aria-labelledby="detailCardLabel" aria-hidden="true">
+<div class="modal fade" id="detailCard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="detailCardLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="card" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4" style="width: 100%;">
                 <img [src]="produtoSelecionado.src" class="img-fluid rounded-start" alt="...">
+                <div class="card-img-overlay">
+                  <div class="d-flex justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancelarOperacao(produtoSelecionado)"></button>
+                  </div>
+                </div>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -46,12 +50,12 @@
             </div>
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <div class="d-flex alinhar-vertical">
             <button [disabled]="produtoSelecionado.quantidade === 0" class="btn btn-primary botao-quantidade" (click)="diminuirQuantidade( produtoSelecionado )">-</button>
             <h5 class="card-title quantidade" style="margin-bottom: 0;"> x{{ produtoSelecionado.quantidade }} </h5>
             <button class="btn btn-primary botao-quantidade" (click)="aumentarQuantidade( produtoSelecionado )">+</button>
-        </div>
+          </div>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="adicionarCarrinho(produtoSelecionado)">Adicionar</button>
         </div>
       </div>
     </div>

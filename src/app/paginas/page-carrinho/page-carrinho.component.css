@@ -34,3 +34,8 @@
 .alinhar-vertical {
     align-items: center;
 }
+
+.remover-margem {
+    margin-right: 0;
+    margin-left: 0;
+}
