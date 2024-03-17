@@ -12,3 +12,8 @@ export interface ICategorias {
     categoria: string
     produtos: IProduto[]
 }
+
+export interface IPergunta {
+    pergunta: string
+    resposta: string
+}

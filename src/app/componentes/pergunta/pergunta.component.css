@@ -1,0 +1,10 @@
+.pergunta {
+    font-family: "Nunito";
+    font-weight: bold;
+}
+
+.resposta {
+    font-family: "Nunito";
+    margin-left: 50px;
+    white-space: pre-line;
+}

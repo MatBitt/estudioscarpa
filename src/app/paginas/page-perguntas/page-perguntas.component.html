@@ -1,0 +1,7 @@
+<h3 class="text-start titulo">Perguntas Frequentes</h3>
+<div class="perguntas">
+    @for (pergunta of perguntas; track $index) {
+        <app-pergunta class="pergunta" [pergunta]="pergunta.pergunta" [resposta]="pergunta.resposta"></app-pergunta>
+    }
+</div>
+
